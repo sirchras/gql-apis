@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Pokemon {
     id: ID!
     name: String!
-    type: [Type]!
+    types: [Type]!
     height: Int!
     weight: Int!
   }
