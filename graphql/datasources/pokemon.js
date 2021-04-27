@@ -10,6 +10,20 @@ class PokemonAPI extends RESTDataSource {
     const res = await this.get(`pokemon/${id}`)
     return this.pokemonReducer(res)
   }
+
+  pokemonReducer(pokemon) {
+    const { id ,name ,types ,height ,weigth } = pokemon
+    return {
+      id,
+      name,
+      types: types.map(({ type: { name, url }}) => ({
+        id: Number(url.split('/').filter(itm => !!itm).reverse()[0]),
+        name
+      })),
+      height,
+      weigth
+    }
+  }
 }
 
 module.exports = PokemonAPI
