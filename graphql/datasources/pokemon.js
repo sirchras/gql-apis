@@ -12,7 +12,7 @@ class PokemonAPI extends RESTDataSource {
   }
 
   pokemonReducer(pokemon) {
-    const { id ,name ,types ,height ,weigth } = pokemon
+    const { id, name, types, height, weight } = pokemon
     return {
       id,
       name,
@@ -21,7 +21,7 @@ class PokemonAPI extends RESTDataSource {
         name
       })),
       height,
-      weigth
+      weight
     }
   }
 }
