@@ -1,10 +1,12 @@
 const { ApolloServer } = require('apollo-server')
 
 const typeDefs = require('./graphql/schema')
+const resolvers = require('./graphql/resolvers')
 const PokemonAPI = require('./graphql/datasources/pokemon')
 
 const server = new ApolloServer({
   typeDefs,
+  resolvers,
   dataSources: () => ({
     pokemonAPI: new PokemonAPI()
   })
